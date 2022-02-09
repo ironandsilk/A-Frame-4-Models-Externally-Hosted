@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- IMPORT DON MCCURDY'S A-FRAME EXTRA-->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+	<a-scene>
+		<a-assets>
+			<img id="dogtexture" src="assets/keffjoons-dog.jpeg">
+        <img id="skybox" src="assets/timessquare.jpeg">
+        <a-asset-item id="baloondog" src="assets/Baloonz.glb"></a-asset-item>
+        <a-asset-item id="threedogmodel" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/three-dogs.glb">
+        <a-asset-item id="pill-model" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/rainbow-pill.obj"></a-asset-item>
+        <a-asset-item id="pill-material" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/rainbow-pill.mtl"></a-asset-item>
+        <a-asset-item id="balloondog-print" src="assets/Keff-Joonz-Balloon-Print.glb"></a-asset-item>
+      </a-assets>
+
+      <a-box position="0 1.5 -3" rotation="0 45 0" material="src: #dogtexture"></a-box>
+
+      <a-sphere position="-2 1.5 -3" radius="0.5"
+       material="envMap: #skybox"></a-sphere>
+      
+      <a-torus position="2 1.5 -3" radius="0.5" radius-tubular="0.1"> </a-torus>
+
+      <a-plane position="0 0 -3" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" material="src: #dogtexture"></a-plane>
+
+      <a-image 
+        position="0 2.75 -3"
+        rotation="0 0 0"
+        material=" src: #dogtexture"></a-image>
+
+      <!--add animation to your mode-->
+      <a-gltf-model src="#balloondog-print"
+        position="0 0.5 -1.5"
+        scale="1.5 1.5 1.5"
+        animation="property: scale; to: 1.55 1.55 1.55; dur: 1000; easing: linear; elasticity: 400; delay: 0; dir: alternate; loop: true;"
+        animation="startEvents: click; property: position; to: 2.25 1.60 -2.00; dur: 2000; easing: linear; elasticity: 400; delay: 0; dir: normal; loop: 0;"
+        ></a-gltf-model>
+        
+        <a-gltf-model src="#threedogmodel"
+        position="0 0.5 -1"
+        scale="0.5 0.5 0.5"></a-gltf-model>
+
+        <a-entity id="material" text="value: Grade: Gold;  align:  center"
+        position="-2 0.75 -3"
+        scale="2 2 2"></a-entity>
+
+        <a-entity text="value:  Material: inflatable;  align:  center"
+        position="2 0.75 -3"
+        scale="2 2 2"></a-entity>
+
+        <a-obj-model src="#pill-model" mtl="#pill-material"
+        position="0 0 0"
+        scale="2 2 2"></a-obj-model>
+
+        <a-gltf-model src="#baloondog"
+        position="0 0.5 -0.5"
+        scale="0.5 0.5 0.5"></a-gltf-model>
+
+      <a-sky src="#skybox" color="#6EBAA7" rotation="0 -90 9"></a-sky>
+    </a-scene>
+  </body>
+</html>
