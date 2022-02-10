@@ -13,6 +13,7 @@
 			<img id="dogtexture" src="assets/keffjoons-dog.jpeg">
         <img id="skybox" src="assets/timessquare.jpeg">
         <a-asset-item id="baloondog" src="assets/Baloonz.glb"></a-asset-item>
+        <a-asset-item id="largermodel" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/three-dogs.glb"></a-asset-item>
         <a-asset-item id="threedogmodel" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/three-dogs.glb">
         <a-asset-item id="pill-model" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/rainbow-pill.obj"></a-asset-item>
         <a-asset-item id="pill-material" src="https://storageapi.fleek.co/53f5140f-ed54-4cb5-a784-ebe4191d6d70-bucket/3d-models/rainbow-pill.mtl"></a-asset-item>
@@ -43,6 +44,10 @@
         
         <a-gltf-model src="#threedogmodel"
         position="0 0.5 -1"
+        scale="0.5 0.5 0.5"></a-gltf-model>
+
+        <a-gltf-model src="#largermodel"
+        position="0 0.5 -0.5"
         scale="0.5 0.5 0.5"></a-gltf-model>
 
         <a-entity id="material" text="value: Grade: Gold;  align:  center"
